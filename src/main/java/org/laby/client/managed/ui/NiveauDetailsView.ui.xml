@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui">
+ <ui:style>
+    .fields {
+      margin-top: 0.5em;
+      margin-left: 1em;
+    }
+    .label {
+      min-height: 25px;
+      font-weight: bold;
+    }
+    .button {
+      margin-right: 1em;
+    }
+    .bar {
+      margin-left: 1em;
+    }
+    .header {
+      margin-left: 1em;
+      color: #4B4A4A;
+      text-shadow: #ddf 1px 1px 0;
+      margin-bottom: 0;
+    }
+    .underline {
+      border-bottom: 2px solid #6F7277;
+    }
+  </ui:style>
+  <g:HTMLPanel>
+    <div class="{style.underline}">
+      <h3 class="{style.header}">
+                <ui:msg>
+                    <span ui:field="displayRenderer"/>
+                </ui:msg>
+            </h3>
+    </div>
+
+    <table class="{style.fields}" id="boundElementHolder">
+      <tr id="bonus">
+                <td>
+                    <span class="{style.label}">Bonus:</span>
+                </td>
+                <td>
+                    <span ui:field="bonus"/>
+                </td>
+            </tr>
+      <tr id="vilains">
+                <td>
+                    <span class="{style.label}">Vilains:</span>
+                </td>
+                <td>
+                    <span ui:field="vilains"/>
+                </td>
+            </tr>
+      <tr id="cases">
+                <td>
+                    <span class="{style.label}">Cases:</span>
+                </td>
+                <td>
+                    <span ui:field="cases"/>
+                </td>
+            </tr>
+      <tr id="joueur">
+                <td>
+                    <span class="{style.label}">Joueur:</span>
+                </td>
+                <td>
+                    <span ui:field="joueur"/>
+                </td>
+            </tr>
+      <tr id="id">
+                <td>
+                    <span class="{style.label}">Id:</span>
+                </td>
+                <td>
+                    <span ui:field="id"/>
+                </td>
+            </tr>
+      <tr id="version">
+                <td>
+                    <span class="{style.label}">Version:</span>
+                </td>
+                <td>
+                    <span ui:field="version"/>
+                </td>
+            </tr>
+      <tr id="nom">
+                <td>
+                    <span class="{style.label}">Nom:</span>
+                </td>
+                <td>
+                    <span ui:field="nom"/>
+                </td>
+            </tr>
+      <tr id="canvaCouloir">
+                <td>
+                    <span class="{style.label}">Canva Couloir:</span>
+                </td>
+                <td>
+                    <span ui:field="canvaCouloir"/>
+                </td>
+            </tr>
+      <tr id="canvaMur">
+                <td>
+                    <span class="{style.label}">Canva Mur:</span>
+                </td>
+                <td>
+                    <span ui:field="canvaMur"/>
+                </td>
+            </tr>
+      <tr id="canvaBonus">
+                <td>
+                    <span class="{style.label}">Canva Bonus:</span>
+                </td>
+                <td>
+                    <span ui:field="canvaBonus"/>
+                </td>
+            </tr>
+      <tr id="canvaSortie">
+                <td>
+                    <span class="{style.label}">Canva Sortie:</span>
+                </td>
+                <td>
+                    <span ui:field="canvaSortie"/>
+                </td>
+            </tr>
+      <tr id="canvaMechants">
+                <td>
+                    <span class="{style.label}">Canva Mechants:</span>
+                </td>
+                <td>
+                    <span ui:field="canvaMechants"/>
+                </td>
+            </tr>
+      <tr id="tailleX">
+                <td>
+                    <span class="{style.label}">Taille X:</span>
+                </td>
+                <td>
+                    <span ui:field="tailleX"/>
+                </td>
+            </tr>
+      <tr id="tailleY">
+                <td>
+                    <span class="{style.label}">Taille Y:</span>
+                </td>
+                <td>
+                    <span ui:field="tailleY"/>
+                </td>
+            </tr>
+    </table>
+
+  <div class="{style.bar}">
+    <g:Button addStyleNames="{style.button}" ui:field="edit">Edit</g:Button>
+    <g:Anchor ui:field="delete">Delete</g:Anchor>
+   </div>
+  </g:HTMLPanel>
+</ui:UiBinder>

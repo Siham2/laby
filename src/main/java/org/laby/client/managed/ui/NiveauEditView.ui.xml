@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:a="urn:import:org.laby.client.managed.ui" xmlns:d="urn:import:com.google.gwt.user.datepicker.client" xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:r="urn:import:org.laby.client.scaffold.ui">
+
+  <ui:style>
+   .errors {
+      padding-left: 0.5em;
+      background-color: red;
+    }
+    .fields {
+      margin-top: 0.5em;
+      margin-left: 1em;
+    }
+    .label {
+      min-height: 25px;
+      font-weight: bold;
+    }
+    .button {
+      margin-right: 1em;
+    }
+    .bar {
+      margin-left: 1em;
+    }
+    .header {
+      margin-left: 1em;
+      color: #4B4A4A;
+      text-shadow: #ddf 1px 1px 0;
+      margin-bottom: 0;
+    }
+    .underline {
+      border-bottom: 2px solid #6F7277;
+    }
+  </ui:style>
+ 
+  <g:HTMLPanel>
+    <div class="{style.underline}">    
+      <h3 class="{style.header}" ui:field="editTitle">
+        <ui:msg>Edit Niveau</ui:msg>
+      </h3>
+      <h3 class="{style.header}" ui:field="createTitle">
+                <ui:msg>New Niveau</ui:msg>
+            </h3>
+    </div>
+    <div class="{style.errors}" ui:field="errors"/>
+
+    <table class="{style.fields}" id="boundElementHolder">
+      
+      
+      
+      
+      
+      
+      
+      
+    
+            
+            
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        <tr id="nom">
+                <td>
+                    <div class="{style.label}">Nom:</div>
+                </td>
+                <td>
+                    <g:TextBox ui:field="nom"/>
+                </td>
+            </tr>
+            <tr id="canvaCouloir">
+                <td>
+                    <div class="{style.label}">Canva Couloir:</div>
+                </td>
+                <td>
+                    <g:TextBox ui:field="canvaCouloir"/>
+                </td>
+            </tr>
+            <tr id="canvaMur">
+                <td>
+                    <div class="{style.label}">Canva Mur:</div>
+                </td>
+                <td>
+                    <g:TextBox ui:field="canvaMur"/>
+                </td>
+            </tr>
+            <tr id="canvaBonus">
+                <td>
+                    <div class="{style.label}">Canva Bonus:</div>
+                </td>
+                <td>
+                    <g:TextBox ui:field="canvaBonus"/>
+                </td>
+            </tr>
+            <tr id="canvaSortie">
+                <td>
+                    <div class="{style.label}">Canva Sortie:</div>
+                </td>
+                <td>
+                    <g:TextBox ui:field="canvaSortie"/>
+                </td>
+            </tr>
+            <tr id="canvaMechants">
+                <td>
+                    <div class="{style.label}">Canva Mechants:</div>
+                </td>
+                <td>
+                    <g:TextBox ui:field="canvaMechants"/>
+                </td>
+            </tr>
+            <tr id="tailleX">
+                <td>
+                    <div class="{style.label}">Taille X:</div>
+                </td>
+                <td>
+                    <g:IntegerBox ui:field="tailleX"/>
+                </td>
+            </tr>
+            <tr id="tailleY">
+                <td>
+                    <div class="{style.label}">Taille Y:</div>
+                </td>
+                <td>
+                    <g:IntegerBox ui:field="tailleY"/>
+                </td>
+            </tr>
+            <tr id="bonus">
+                <td>
+                    <div class="{style.label}">Bonus:</div>
+                </td>
+                <td>
+                    <a:BonusSetEditor ui:field="bonus"/>
+                </td>
+            </tr>
+            <tr id="vilains">
+                <td>
+                    <div class="{style.label}">Vilains:</div>
+                </td>
+                <td>
+                    <a:MechantSetEditor ui:field="vilains"/>
+                </td>
+            </tr>
+            <tr id="cases">
+                <td>
+                    <div class="{style.label}">Cases:</div>
+                </td>
+                <td>
+                    <a:CaseElementSetEditor ui:field="cases"/>
+                </td>
+            </tr>
+            <tr id="joueur">
+                <td>
+                    <div class="{style.label}">Joueur:</div>
+                </td>
+                <td>
+                    <g:ValueListBox ui:field="joueur"/>
+                </td>
+            </tr>
+        </table>
+
+    <div class="{style.bar}">
+      <g:Button addStyleNames="{style.button}" ui:field="save">Save</g:Button>
+      <g:Button addStyleNames="{style.button}" ui:field="cancel">Cancel</g:Button>
+    </div>
+  </g:HTMLPanel>
+</ui:UiBinder>
