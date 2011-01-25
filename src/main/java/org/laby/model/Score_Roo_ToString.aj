@@ -10,6 +10,7 @@ privileged aspect Score_Roo_ToString {
     public String Score.toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Score: ").append(getScore()).append(", ");
+        sb.append("UserName: ").append(getUserName()).append(", ");
         sb.append("Niveau: ").append(getNiveau());
         return sb.toString();
     }

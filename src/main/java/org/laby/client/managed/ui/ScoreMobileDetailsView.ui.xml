@@ -13,23 +13,31 @@
   </ui:style>
 
   <g:HTMLPanel id="boundElementHolder" styleName="{style.outer}">
-    <div id="id">
+    
+    
+    
+    
+
+    <g:Button ui:field="delete">Delete</g:Button>
+  <div id="id">
             <div class="{style.label}">Id</div>
             <div class="{style.value}" ui:field="id"/>
         </div>
-    <div id="version">
+        <div id="version">
             <div class="{style.label}">Version</div>
             <div class="{style.value}" ui:field="version"/>
         </div>
-    <div id="score">
+        <div id="score">
             <div class="{style.label}">Score</div>
             <div class="{style.value}" ui:field="score"/>
         </div>
-    <div id="niveau">
+        <div id="userName">
+            <div class="{style.label}">User Name</div>
+            <div class="{style.value}" ui:field="userName"/>
+        </div>
+        <div id="niveau">
             <div class="{style.label}">Niveau</div>
             <div class="{style.value}" ui:field="niveau"/>
         </div>
-
-    <g:Button ui:field="delete">Delete</g:Button>
-  </g:HTMLPanel>
+    </g:HTMLPanel>
 </ui:UiBinder>

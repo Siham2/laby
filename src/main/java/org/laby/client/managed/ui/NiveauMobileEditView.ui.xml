@@ -19,78 +19,9 @@
   <g:HTMLPanel id="boundElementHolder" styleName="{style.outer}">
     <div class="{style.error}" ui:field="errors"/>
     
-    
-    
-    
-    
-    
-    
-    
-    
 
     <g:Button ui:field="save">Save</g:Button>
   
-        
-        
-        
-        
-        
-        
-        
-        
-    
-        
-        
-        
-        
-        
-        
-        
-        
-        
-    
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-    
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-    
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-    
-        
-        
-        
-        
-        
-        
-        
         
         
         
@@ -143,29 +74,6 @@
                 <g:IntegerBox ui:field="tailleY"/>
             </div>
         </div>
-        <div id="bonus">
-            <div class="{style.label}">Bonus</div>
-            <div class="{style.value}">
-                <a:BonusSetEditor ui:field="bonus"/>
-            </div>
-        </div>
-        <div id="vilains">
-            <div class="{style.label}">Vilains</div>
-            <div class="{style.value}">
-                <a:MechantSetEditor ui:field="vilains"/>
-            </div>
-        </div>
-        <div id="cases">
-            <div class="{style.label}">Cases</div>
-            <div class="{style.value}">
-                <a:CaseElementSetEditor ui:field="cases"/>
-            </div>
-        </div>
-        <div id="joueur">
-            <div class="{style.label}">Joueur</div>
-            <div class="{style.value}">
-                <g:ValueListBox ui:field="joueur"/>
-            </div>
-        </div>
+   
     </g:HTMLPanel>
 </ui:UiBinder>

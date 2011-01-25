@@ -19,19 +19,27 @@
   <g:HTMLPanel id="boundElementHolder" styleName="{style.outer}">
     <div class="{style.error}" ui:field="errors"/>
     
-    <div id="score">
+    
+    
+
+    <g:Button ui:field="save">Save</g:Button>
+  <div id="score">
             <div class="{style.label}">Score</div>
             <div class="{style.value}">
                 <g:LongBox ui:field="score"/>
             </div>
         </div>
-    <div id="niveau">
+        <div id="userName">
+            <div class="{style.label}">User Name</div>
+            <div class="{style.value}">
+                <g:TextBox ui:field="userName"/>
+            </div>
+        </div>
+        <div id="niveau">
             <div class="{style.label}">Niveau</div>
             <div class="{style.value}">
                 <g:ValueListBox ui:field="niveau"/>
             </div>
         </div>
-
-    <g:Button ui:field="save">Save</g:Button>
-  </g:HTMLPanel>
+    </g:HTMLPanel>
 </ui:UiBinder>

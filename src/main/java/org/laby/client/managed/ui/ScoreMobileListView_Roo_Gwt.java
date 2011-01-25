@@ -27,7 +27,7 @@ public abstract class ScoreMobileListView_Roo_Gwt extends MobileProxyListView<Sc
     }
 
     public void init() {
+        paths.add("userName");
         paths.add("id");
-        paths.add("version");
     }
 }

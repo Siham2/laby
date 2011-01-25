@@ -41,18 +41,6 @@ import org.laby.client.scaffold.ui.*;
 public abstract class NiveauMobileEditView_Roo_Gwt extends Composite implements View<NiveauMobileEditView> {
 
     @UiField
-    BonusListEditor bonus;
-
-    @UiField
-    MechantListEditor vilains;
-
-    @UiField
-    CaseElementListEditor cases;
-
-    @UiField(provided = true)
-    ValueListBox<JoueurProxy> joueur = new ValueListBox<JoueurProxy>(org.laby.client.managed.ui.JoueurProxyRenderer.instance(), new com.google.gwt.requestfactory.ui.client.EntityProxyKeyProvider<org.laby.client.managed.request.JoueurProxy>());
-
-    @UiField
     TextBox nom;
 
     @UiField
@@ -76,19 +64,6 @@ public abstract class NiveauMobileEditView_Roo_Gwt extends Composite implements 
     @UiField
     IntegerBox tailleY;
 
-    public void setJoueurPickerValues(Collection<JoueurProxy> values) {
-        joueur.setAcceptableValues(values);
-    }
-
-    public void setVilainsPickerValues(Collection<MechantProxy> values) {
-        vilains.setAcceptableValues(values);
-    }
-
-    public void setBonusPickerValues(Collection<BonusProxy> values) {
-        bonus.setAcceptableValues(values);
-    }
-
-    public void setCasesPickerValues(Collection<CaseElementProxy> values) {
-        cases.setAcceptableValues(values);
-    }
+    
+  
 }

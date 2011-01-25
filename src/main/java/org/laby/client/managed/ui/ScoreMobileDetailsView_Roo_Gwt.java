@@ -30,6 +30,9 @@ public abstract class ScoreMobileDetailsView_Roo_Gwt extends Composite implement
     Element score;
 
     @UiField
+    Element userName;
+
+    @UiField
     Element niveau;
 
     ScoreProxy proxy;
@@ -39,6 +42,7 @@ public abstract class ScoreMobileDetailsView_Roo_Gwt extends Composite implement
         id.setInnerText(proxy.getId() == null ? "" : String.valueOf(proxy.getId()));
         version.setInnerText(proxy.getVersion() == null ? "" : String.valueOf(proxy.getVersion()));
         score.setInnerText(proxy.getScore() == null ? "" : String.valueOf(proxy.getScore()));
+        userName.setInnerText(proxy.getUserName() == null ? "" : String.valueOf(proxy.getUserName()));
         niveau.setInnerText(proxy.getNiveau() == null ? "" : org.laby.client.managed.ui.NiveauProxyRenderer.instance().render(proxy.getNiveau()));
     }
 }

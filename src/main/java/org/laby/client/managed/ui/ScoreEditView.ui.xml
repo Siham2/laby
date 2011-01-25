@@ -43,7 +43,9 @@
     <div class="{style.errors}" ui:field="errors"/>
 
     <table class="{style.fields}" id="boundElementHolder">
-      <tr id="score">
+      
+      
+    <tr id="score">
                 <td>
                     <div class="{style.label}">Score:</div>
                 </td>
@@ -51,7 +53,15 @@
                     <g:LongBox ui:field="score"/>
                 </td>
             </tr>
-      <tr id="niveau">
+            <tr id="userName">
+                <td>
+                    <div class="{style.label}">User Name:</div>
+                </td>
+                <td>
+                    <g:TextBox ui:field="userName"/>
+                </td>
+            </tr>
+            <tr id="niveau">
                 <td>
                     <div class="{style.label}">Niveau:</div>
                 </td>
@@ -59,7 +69,7 @@
                     <g:ValueListBox ui:field="niveau"/>
                 </td>
             </tr>
-    </table>
+        </table>
 
     <div class="{style.bar}">
       <g:Button addStyleNames="{style.button}" ui:field="save">Save</g:Button>

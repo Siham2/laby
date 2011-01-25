@@ -18,10 +18,10 @@
 
 		.banner {
 			background-color: #777;
-			-moz-border-radius-topleft: 10px;
-			-webkit-border-top-left-radius: 10px;
-			-moz-border-radius-topright: 10px;
-			-webkit-border-top-right-radius: 10px;
+			\-moz-border-radius-topleft: 10px;
+			\-webkit-border-top-left-radius: 10px;
+			\-moz-border-radius-topright: 10px;
+			\-webkit-border-top-right-radius: 10px;
 			margin-top: 1.5em;
 			height: 4em;
 		}
@@ -69,10 +69,10 @@
 			border: 1px solid #ddf;
 			overflow-y: auto;
 			overflow-x: hidden;
-			-moz-border-radius-bottomleft: 10px;
-			-webkit-border-bottom-left-radius: 10px;
-			-moz-border-radius-bottomright: 10px;
-			-webkit-border-bottom-right-radius: 10px;
+			 \-moz-border-radius-bottomleft: 10px;
+			\-webkit-border-bottom-left-radius: 10px;
+			\-moz-border-radius-bottomright: 10px;
+			\-webkit-border-bottom-right-radius: 10px;
 		}
 
 		.entities {

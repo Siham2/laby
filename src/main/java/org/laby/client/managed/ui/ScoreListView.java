@@ -3,23 +3,11 @@
 package org.laby.client.managed.ui;
 
 import com.google.gwt.core.client.GWT;
-import com.google.gwt.i18n.client.DateTimeFormat;
-import com.google.gwt.text.client.DateTimeFormatRenderer;
-import com.google.gwt.text.shared.AbstractRenderer;
-import com.google.gwt.text.shared.Renderer;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
-import com.google.gwt.user.cellview.client.CellTable;
 import com.google.gwt.user.cellview.client.HasKeyboardSelectionPolicy.KeyboardSelectionPolicy;
-import com.google.gwt.user.cellview.client.TextColumn;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.HTMLPanel;
-import java.util.HashSet;
-import java.util.Set;
-import org.laby.client.managed.request.NiveauProxy;
-import org.laby.client.managed.request.ScoreProxy;
-import org.laby.client.managed.ui.ScoreListView.Binder;
-import org.laby.client.scaffold.place.AbstractProxyListView;
 
 public class ScoreListView extends ScoreListView_Roo_Gwt {
 

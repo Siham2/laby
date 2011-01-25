@@ -35,7 +35,11 @@
     </div>
 
     <table class="{style.fields}" id="boundElementHolder">
-      <tr id="id">
+      
+      
+      
+      
+    <tr id="id">
                 <td>
                     <span class="{style.label}">Id:</span>
                 </td>
@@ -43,7 +47,7 @@
                     <span ui:field="id"/>
                 </td>
             </tr>
-      <tr id="version">
+            <tr id="version">
                 <td>
                     <span class="{style.label}">Version:</span>
                 </td>
@@ -51,7 +55,7 @@
                     <span ui:field="version"/>
                 </td>
             </tr>
-      <tr id="score">
+            <tr id="score">
                 <td>
                     <span class="{style.label}">Score:</span>
                 </td>
@@ -59,7 +63,15 @@
                     <span ui:field="score"/>
                 </td>
             </tr>
-      <tr id="niveau">
+            <tr id="userName">
+                <td>
+                    <span class="{style.label}">User Name:</span>
+                </td>
+                <td>
+                    <span ui:field="userName"/>
+                </td>
+            </tr>
+            <tr id="niveau">
                 <td>
                     <span class="{style.label}">Niveau:</span>
                 </td>
@@ -67,7 +79,7 @@
                     <span ui:field="niveau"/>
                 </td>
             </tr>
-    </table>
+        </table>
 
   <div class="{style.bar}">
     <g:Button addStyleNames="{style.button}" ui:field="edit">Edit</g:Button>

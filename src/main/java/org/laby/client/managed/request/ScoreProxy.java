@@ -16,6 +16,8 @@ public interface ScoreProxy extends EntityProxy {
 
     abstract Long getScore();
 
+    abstract String getUserName();
+
     abstract NiveauProxy getNiveau();
 
     abstract void setId(Long id);
@@ -23,6 +25,8 @@ public interface ScoreProxy extends EntityProxy {
     abstract void setVersion(Integer version);
 
     abstract void setScore(Long score);
+
+    abstract void setUserName(String userName);
 
     abstract void setNiveau(NiveauProxy niveau);
 }

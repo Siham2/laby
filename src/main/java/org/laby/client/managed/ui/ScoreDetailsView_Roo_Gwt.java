@@ -31,6 +31,9 @@ public abstract class ScoreDetailsView_Roo_Gwt extends Composite implements Prox
     SpanElement score;
 
     @UiField
+    SpanElement userName;
+
+    @UiField
     SpanElement niveau;
 
     ScoreProxy proxy;
@@ -43,6 +46,7 @@ public abstract class ScoreDetailsView_Roo_Gwt extends Composite implements Prox
         id.setInnerText(proxy.getId() == null ? "" : String.valueOf(proxy.getId()));
         version.setInnerText(proxy.getVersion() == null ? "" : String.valueOf(proxy.getVersion()));
         score.setInnerText(proxy.getScore() == null ? "" : String.valueOf(proxy.getScore()));
+        userName.setInnerText(proxy.getUserName() == null ? "" : String.valueOf(proxy.getUserName()));
         niveau.setInnerText(proxy.getNiveau() == null ? "" : org.laby.client.managed.ui.NiveauProxyRenderer.instance().render(proxy.getNiveau()));
         displayRenderer.setInnerText(org.laby.client.managed.ui.ScoreProxyRenderer.instance().render(proxy));
     }

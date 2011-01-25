@@ -35,14 +35,6 @@
             </h3>
     </div>
     <g:FocusPanel ui:field="gamePanel" />
-    <g:PopupPanel ui:field="scorePanel"  >
-    	<g:HTMLPanel>
-    	<ui:msg>Votre score est : 
-            <span ui:field="score"/>  
-        </ui:msg>
-         <g:Button addStyleNames="{style.button}" ui:field="saveScore">Sauvegarder</g:Button>
-         </g:HTMLPanel>
-    </g:PopupPanel>
    <audio id="audioTag"  autobuffer="autobuffer"   preload="auto" >
      <source src="http://www.dejunair.com/audio/download/ogg/Electric%20Rodeo.mp3" />
  	 <source src="http://www.dejunair.com/audio/download/ogg/Electric%20Rodeo.ogg" />

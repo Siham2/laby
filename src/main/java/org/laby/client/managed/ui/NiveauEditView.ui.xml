@@ -43,79 +43,7 @@
     <div class="{style.errors}" ui:field="errors"/>
 
     <table class="{style.fields}" id="boundElementHolder">
-      
-      
-      
-      
-      
-      
-      
-      
-    
-            
-            
-            
-            
-            
-            
-            
-            
-        
-            
-            
-            
-            
-            
-            
-            
-            
-            
-        
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-        
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-        
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-        
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+
             
         <tr id="nom">
                 <td>
@@ -179,38 +107,6 @@
                 </td>
                 <td>
                     <g:IntegerBox ui:field="tailleY"/>
-                </td>
-            </tr>
-            <tr id="bonus">
-                <td>
-                    <div class="{style.label}">Bonus:</div>
-                </td>
-                <td>
-                    <a:BonusSetEditor ui:field="bonus"/>
-                </td>
-            </tr>
-            <tr id="vilains">
-                <td>
-                    <div class="{style.label}">Vilains:</div>
-                </td>
-                <td>
-                    <a:MechantSetEditor ui:field="vilains"/>
-                </td>
-            </tr>
-            <tr id="cases">
-                <td>
-                    <div class="{style.label}">Cases:</div>
-                </td>
-                <td>
-                    <a:CaseElementSetEditor ui:field="cases"/>
-                </td>
-            </tr>
-            <tr id="joueur">
-                <td>
-                    <div class="{style.label}">Joueur:</div>
-                </td>
-                <td>
-                    <g:ValueListBox ui:field="joueur"/>
                 </td>
             </tr>
         </table>

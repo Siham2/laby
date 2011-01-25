@@ -2,10 +2,11 @@
 
 package org.laby.client.managed.request;
 
-import com.google.gwt.requestfactory.shared.EntityProxy;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
+
+import com.google.gwt.requestfactory.shared.EntityProxy;
 
 public abstract class ApplicationEntityTypesProcessor<T> {
 
@@ -25,11 +26,6 @@ public abstract class ApplicationEntityTypesProcessor<T> {
         Set<Class<? extends EntityProxy>> rtn = new HashSet<Class<? extends EntityProxy>>();
         rtn.add(NiveauProxy.class);
         rtn.add(ScoreProxy.class);
-       
-        //rtn.add(MechantProxy.class);
-        //rtn.add(JoueurProxy.class);
-        //rtn.add(CaseElementProxy.class);
-        //rtn.add(BonusProxy.class);
         return Collections.unmodifiableSet(rtn);
     }
 
@@ -42,22 +38,7 @@ public abstract class ApplicationEntityTypesProcessor<T> {
             processor.handleNiveau((NiveauProxy) null);
             return;
         }
-        if (MechantProxy.class.equals(clazz)) {
-            processor.handleMechant((MechantProxy) null);
-            return;
-        }
-        if (JoueurProxy.class.equals(clazz)) {
-            processor.handleJoueur((JoueurProxy) null);
-            return;
-        }
-        if (CaseElementProxy.class.equals(clazz)) {
-            processor.handleCaseElement((CaseElementProxy) null);
-            return;
-        }
-        if (BonusProxy.class.equals(clazz)) {
-            processor.handleBonus((BonusProxy) null);
-            return;
-        }
+     
         processor.handleNonProxy(null);
     }
 
@@ -70,22 +51,7 @@ public abstract class ApplicationEntityTypesProcessor<T> {
             processor.handleNiveau((NiveauProxy) proxy);
             return;
         }
-        if (proxy instanceof MechantProxy) {
-            processor.handleMechant((MechantProxy) proxy);
-            return;
-        }
-        if (proxy instanceof JoueurProxy) {
-            processor.handleJoueur((JoueurProxy) proxy);
-            return;
-        }
-        if (proxy instanceof CaseElementProxy) {
-            processor.handleCaseElement((CaseElementProxy) proxy);
-            return;
-        }
-        if (proxy instanceof BonusProxy) {
-            processor.handleBonus((BonusProxy) proxy);
-            return;
-        }
+     
         processor.handleNonProxy(proxy);
     }
 
@@ -96,13 +62,6 @@ public abstract class ApplicationEntityTypesProcessor<T> {
 
     public abstract void handleNiveau(NiveauProxy proxy);
 
-    public abstract void handleMechant(MechantProxy proxy);
-
-    public abstract void handleJoueur(JoueurProxy proxy);
-
-    public abstract void handleCaseElement(CaseElementProxy proxy);
-
-    public abstract void handleBonus(BonusProxy proxy);
 
     public T process(Class<?> clazz) {
         setResult(defaultValue);

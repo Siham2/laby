@@ -2,33 +2,21 @@
 
 package org.laby.client.managed.activity;
 
-import com.google.gwt.activity.shared.Activity;
-import com.google.gwt.activity.shared.ActivityMapper;
-import com.google.gwt.place.shared.Place;
-import com.google.gwt.place.shared.PlaceController;
-import com.google.inject.Inject;
 import org.laby.client.managed.request.ApplicationEntityTypesProcessor;
 import org.laby.client.managed.request.ApplicationRequestFactory;
-import org.laby.client.managed.request.BonusProxy;
-import org.laby.client.managed.request.CaseElementProxy;
-import org.laby.client.managed.request.JoueurProxy;
-import org.laby.client.managed.request.MechantProxy;
 import org.laby.client.managed.request.NiveauProxy;
 import org.laby.client.managed.request.ScoreProxy;
-import org.laby.client.managed.ui.BonusListView;
-import org.laby.client.managed.ui.BonusMobileListView;
-import org.laby.client.managed.ui.CaseElementListView;
-import org.laby.client.managed.ui.CaseElementMobileListView;
-import org.laby.client.managed.ui.JoueurListView;
-import org.laby.client.managed.ui.JoueurMobileListView;
-import org.laby.client.managed.ui.MechantListView;
-import org.laby.client.managed.ui.MechantMobileListView;
 import org.laby.client.managed.ui.NiveauListView;
 import org.laby.client.managed.ui.NiveauMobileListView;
 import org.laby.client.managed.ui.ScoreListView;
 import org.laby.client.managed.ui.ScoreMobileListView;
 import org.laby.client.scaffold.ScaffoldApp;
 import org.laby.client.scaffold.place.ProxyListPlace;
+
+import com.google.gwt.activity.shared.Activity;
+import com.google.gwt.activity.shared.ActivityMapper;
+import com.google.gwt.place.shared.Place;
+import com.google.gwt.place.shared.PlaceController;
 
 public abstract class ApplicationMasterActivities_Roo_Gwt implements ActivityMapper {
 
@@ -53,25 +41,7 @@ public abstract class ApplicationMasterActivities_Roo_Gwt implements ActivityMap
                 setResult(new NiveauListActivity(requests, ScaffoldApp.isMobile() ? NiveauMobileListView.instance() : NiveauListView.instance(), placeController));
             }
 
-            @Override
-            public void handleMechant(MechantProxy isNull) {
-                setResult(new MechantListActivity(requests, ScaffoldApp.isMobile() ? MechantMobileListView.instance() : MechantListView.instance(), placeController));
-            }
-
-            @Override
-            public void handleJoueur(JoueurProxy isNull) {
-                setResult(new JoueurListActivity(requests, ScaffoldApp.isMobile() ? JoueurMobileListView.instance() : JoueurListView.instance(), placeController));
-            }
-
-            @Override
-            public void handleCaseElement(CaseElementProxy isNull) {
-                setResult(new CaseElementListActivity(requests, ScaffoldApp.isMobile() ? CaseElementMobileListView.instance() : CaseElementListView.instance(), placeController));
-            }
-
-            @Override
-            public void handleBonus(BonusProxy isNull) {
-                setResult(new BonusListActivity(requests, ScaffoldApp.isMobile() ? BonusMobileListView.instance() : BonusListView.instance(), placeController));
-            }
+           
         }.process(listPlace.getProxyClass());
     }
 }

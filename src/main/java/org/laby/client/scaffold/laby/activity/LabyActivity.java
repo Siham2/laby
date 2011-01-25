@@ -5,20 +5,23 @@ package org.laby.client.scaffold.laby.activity;
 import org.laby.client.managed.request.ApplicationRequestFactory;
 import org.laby.client.managed.request.NiveauProxy;
 import org.laby.client.managed.request.ScoreProxy;
+import org.laby.client.managed.request.ScoreRequest;
 import org.laby.client.scaffold.activity.IsScaffoldMobileActivity;
 import org.laby.client.scaffold.laby.ui.LabyView;
 import org.laby.client.scaffold.place.ProxyListPlace;
 import org.laby.client.scaffold.place.ProxyPlace;
 import org.laby.client.scaffold.place.ProxyPlace.Operation;
+import org.laby.shared.gae.GaeUser;
+import org.laby.shared.gae.GaeUserServiceRequest;
 
 import com.google.gwt.activity.shared.AbstractActivity;
-import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.place.shared.Place;
 import com.google.gwt.place.shared.PlaceController;
 import com.google.gwt.requestfactory.shared.EntityProxy;
 import com.google.gwt.requestfactory.shared.EntityProxyId;
 import com.google.gwt.requestfactory.shared.Receiver;
+import com.google.gwt.user.client.Window.Location;
 import com.google.gwt.user.client.ui.AcceptsOneWidget;
 
 public class LabyActivity  extends AbstractActivity implements LabyView.Delegate, IsScaffoldMobileActivity {
@@ -106,11 +109,24 @@ public class LabyActivity  extends AbstractActivity implements LabyView.Delegate
 
 
 	@Override
-	public void saveScore(NiveauProxy niveau, Integer score) {
-		ScoreProxy scoreProxy = requests.scoreRequest().create(ScoreProxy.class);
-		scoreProxy.setScore(new Long(score));
-		scoreProxy.setNiveau(niveau);
-		requests.scoreRequest().persist();
+	public void saveScore(final NiveauProxy niveau, final Integer score) {
+		
+		GaeUserServiceRequest request = requests.userServiceRequest();
+	   final ScoreRequest scoreRequest = requests.scoreRequest();
+
+		request.getCurrentUser().to(new Receiver<GaeUser>() {
+			@Override
+			public void onSuccess(GaeUser response) {
+				ScoreProxy scoreProxy = scoreRequest.create(ScoreProxy.class);
+				scoreProxy.setScore(new Long(score));
+				scoreProxy.setNiveau(niveau);
+				scoreProxy.setUserName(response.getNickname());
+				scoreRequest.persist().using(scoreProxy).fire();
+			}
+		});
+
+		request.fire();
+		
 	}
 
 

@@ -40,6 +40,9 @@ public abstract class ScoreEditView_Roo_Gwt extends Composite implements View<Sc
     @UiField
     LongBox score;
 
+    @UiField
+    TextBox userName;
+
     @UiField(provided = true)
     ValueListBox<NiveauProxy> niveau = new ValueListBox<NiveauProxy>(org.laby.client.managed.ui.NiveauProxyRenderer.instance(), new com.google.gwt.requestfactory.ui.client.EntityProxyKeyProvider<org.laby.client.managed.request.NiveauProxy>());
 

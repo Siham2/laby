@@ -4,6 +4,7 @@
 package org.laby.model;
 
 import java.lang.Long;
+import java.lang.String;
 import javax.persistence.ManyToOne;
 import javax.persistence.Transient;
 import org.laby.model.Niveau;
@@ -22,6 +23,14 @@ privileged aspect Score_Roo_JavaBean {
     
     public void Score.setScore(Long score) {
         this.score = score;
+    }
+    
+    public String Score.getUserName() {
+        return this.userName;
+    }
+    
+    public void Score.setUserName(String userName) {
+        this.userName = userName;
     }
     
     public Niveau Score.getNiveau() {

@@ -73,6 +73,21 @@ public abstract class ScoreListView_Roo_Gwt extends AbstractProxyListView<ScoreP
                 return renderer.render(object.getScore());
             }
         }, "Score");
+        paths.add("userName");
+        table.addColumn(new TextColumn<ScoreProxy>() {
+
+            Renderer<java.lang.String> renderer = new AbstractRenderer<java.lang.String>() {
+
+                public String render(java.lang.String obj) {
+                    return obj == null ? "" : String.valueOf(obj);
+                }
+            };
+
+            @Override
+            public String getValue(ScoreProxy object) {
+                return renderer.render(object.getUserName());
+            }
+        }, "User Name");
         paths.add("niveau");
         table.addColumn(new TextColumn<ScoreProxy>() {
 

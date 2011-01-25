@@ -2,32 +2,15 @@
 
 package org.laby.client.managed.activity;
 
+import org.laby.client.managed.request.ApplicationRequestFactory;
+import org.laby.client.managed.request.NiveauProxy;
+import org.laby.client.scaffold.activity.IsScaffoldMobileActivity;
+import org.laby.client.scaffold.place.ProxyDetailsView.Delegate;
+
 import com.google.gwt.activity.shared.AbstractActivity;
-import com.google.gwt.event.shared.EventBus;
-import com.google.gwt.place.shared.Place;
-import com.google.gwt.place.shared.PlaceController;
 import com.google.gwt.requestfactory.shared.EntityProxy;
 import com.google.gwt.requestfactory.shared.EntityProxyId;
 import com.google.gwt.requestfactory.shared.Receiver;
-import com.google.gwt.requestfactory.shared.Request;
-import com.google.gwt.user.client.ui.AcceptsOneWidget;
-import java.util.List;
-import java.util.Set;
-import org.laby.client.managed.request.ApplicationRequestFactory;
-import org.laby.client.managed.request.BonusProxy;
-import org.laby.client.managed.request.CaseElementProxy;
-import org.laby.client.managed.request.JoueurProxy;
-import org.laby.client.managed.request.MechantProxy;
-import org.laby.client.managed.request.NiveauProxy;
-import org.laby.client.managed.ui.BonusListEditor;
-import org.laby.client.managed.ui.CaseElementListEditor;
-import org.laby.client.managed.ui.MechantListEditor;
-import org.laby.client.scaffold.activity.IsScaffoldMobileActivity;
-import org.laby.client.scaffold.place.ProxyDetailsView;
-import org.laby.client.scaffold.place.ProxyDetailsView.Delegate;
-import org.laby.client.scaffold.place.ProxyListPlace;
-import org.laby.client.scaffold.place.ProxyPlace;
-import org.laby.client.scaffold.place.ProxyPlace.Operation;
 
 public abstract class NiveauDetailsActivity_Roo_Gwt extends AbstractActivity implements Delegate, IsScaffoldMobileActivity {
 

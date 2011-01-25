@@ -15,6 +15,11 @@ public class Score {
     @NotNull
     private Long score;
 
+    @NotNull
+    private String userName;
+    
     @ManyToOne
     private Niveau niveau;
+    
+    
 }

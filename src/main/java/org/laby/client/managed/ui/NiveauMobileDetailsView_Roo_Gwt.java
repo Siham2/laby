@@ -70,11 +70,7 @@ public abstract class NiveauMobileDetailsView_Roo_Gwt extends Composite implemen
 
     public void setValue(NiveauProxy proxy) {
         this.proxy = proxy;
-        bonus.setInnerText(proxy.getBonus() == null ? "" : org.laby.client.scaffold.place.CollectionRenderer.of(org.laby.client.managed.ui.BonusProxyRenderer.instance()).render(proxy.getBonus()));
-        vilains.setInnerText(proxy.getVilains() == null ? "" : org.laby.client.scaffold.place.CollectionRenderer.of(org.laby.client.managed.ui.MechantProxyRenderer.instance()).render(proxy.getVilains()));
-        cases.setInnerText(proxy.getCases() == null ? "" : org.laby.client.scaffold.place.CollectionRenderer.of(org.laby.client.managed.ui.CaseElementProxyRenderer.instance()).render(proxy.getCases()));
-        joueur.setInnerText(proxy.getJoueur() == null ? "" : org.laby.client.managed.ui.JoueurProxyRenderer.instance().render(proxy.getJoueur()));
-        id.setInnerText(proxy.getId() == null ? "" : String.valueOf(proxy.getId()));
+           id.setInnerText(proxy.getId() == null ? "" : String.valueOf(proxy.getId()));
         version.setInnerText(proxy.getVersion() == null ? "" : String.valueOf(proxy.getVersion()));
         nom.setInnerText(proxy.getNom() == null ? "" : String.valueOf(proxy.getNom()));
         canvaCouloir.setInnerText(proxy.getCanvaCouloir() == null ? "" : String.valueOf(proxy.getCanvaCouloir()));

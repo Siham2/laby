@@ -40,25 +40,7 @@ public abstract class ApplicationDetailsActivities_Roo_Gwt implements ActivityMa
                 setResult(new NiveauActivitiesMapper(requests, placeController).getActivity(proxyPlace));
             }
 
-            @Override
-            public void handleMechant(MechantProxy proxy) {
-                setResult(new MechantActivitiesMapper(requests, placeController).getActivity(proxyPlace));
-            }
-
-            @Override
-            public void handleJoueur(JoueurProxy proxy) {
-                setResult(new JoueurActivitiesMapper(requests, placeController).getActivity(proxyPlace));
-            }
-
-            @Override
-            public void handleCaseElement(CaseElementProxy proxy) {
-                setResult(new CaseElementActivitiesMapper(requests, placeController).getActivity(proxyPlace));
-            }
-
-            @Override
-            public void handleBonus(BonusProxy proxy) {
-                setResult(new BonusActivitiesMapper(requests, placeController).getActivity(proxyPlace));
-            }
+         
         }.process(proxyPlace.getProxyClass());
     }
 }

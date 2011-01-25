@@ -164,7 +164,9 @@ public class GWTMechant
 
 
 	public void stop() {
-		timer.cancel();
+		if(timer!=null){
+			timer.cancel();
+		}
 	}
     
 }

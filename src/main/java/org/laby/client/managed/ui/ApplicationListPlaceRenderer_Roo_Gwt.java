@@ -24,28 +24,10 @@ public abstract class ApplicationListPlaceRenderer_Roo_Gwt extends AbstractRende
 
             @Override
             public void handleNiveau(NiveauProxy isNull) {
-                setResult("Niveaus");
+                setResult("Niveaux");
             }
 
-            @Override
-            public void handleMechant(MechantProxy isNull) {
-                setResult("Mechants");
-            }
-
-            @Override
-            public void handleJoueur(JoueurProxy isNull) {
-                setResult("Joueurs");
-            }
-
-            @Override
-            public void handleCaseElement(CaseElementProxy isNull) {
-                setResult("CaseElements");
-            }
-
-            @Override
-            public void handleBonus(BonusProxy isNull) {
-                setResult("Bonuss");
-            }
+         
         }.process(object.getProxyClass());
     }
 }

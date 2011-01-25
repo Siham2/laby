@@ -330,11 +330,15 @@ public class Laby extends SimpleCanvasGame implements KeyPressHandler,
 	}-*/;
 
 	public native void playAudioTag() /*-{
-		$doc.getElementById('audioTag').play();
+		if($doc.getElementById('audioTag')!=null){
+			$doc.getElementById('audioTag').play();
+		}
 	}-*/;
 	
 	public native void stopAudioTag() /*-{
-		$doc.getElementById('audioTag').pause();
+		if($doc.getElementById('audioTag')!=null){
+			$doc.getElementById('audioTag').pause();
+		}
 	}-*/;
 	
 	
