@@ -4,6 +4,7 @@ package org.laby.client.scaffold.laby.activity;
 
 import org.laby.client.managed.request.ApplicationRequestFactory;
 import org.laby.client.managed.request.NiveauProxy;
+import org.laby.client.managed.request.ScoreProxy;
 import org.laby.client.scaffold.activity.IsScaffoldMobileActivity;
 import org.laby.client.scaffold.laby.ui.LabyView;
 import org.laby.client.scaffold.place.ProxyListPlace;
@@ -11,6 +12,7 @@ import org.laby.client.scaffold.place.ProxyPlace;
 import org.laby.client.scaffold.place.ProxyPlace.Operation;
 
 import com.google.gwt.activity.shared.AbstractActivity;
+import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.place.shared.Place;
 import com.google.gwt.place.shared.PlaceController;
@@ -61,7 +63,7 @@ public class LabyActivity  extends AbstractActivity implements LabyView.Delegate
     }
 
     public String getTitleText() {
-        return "View Niveau";
+        return "Lancer le  niveau";
     }
 
     public boolean hasEditButton() {
@@ -88,10 +90,32 @@ public class LabyActivity  extends AbstractActivity implements LabyView.Delegate
                 if (display == null) {
                     return;
                 }
-                view.setValue((NiveauProxy) proxy,requests);
+                view.setValue((NiveauProxy) proxy);
                 display.setWidget(view);
             }
         };
         find(callback);
     }
+
+
+	@Override
+	public void setDifficulte(int difficulte) {
+		// TODO backport Laby here
+		
+	}
+
+
+	@Override
+	public void saveScore(NiveauProxy niveau, Integer score) {
+		ScoreProxy scoreProxy = requests.scoreRequest().create(ScoreProxy.class);
+		scoreProxy.setScore(new Long(score));
+		scoreProxy.setNiveau(niveau);
+		requests.scoreRequest().persist();
+	}
+
+
+	@Override
+	public void replayClicked() {
+		
+	}
 }

@@ -17,7 +17,7 @@ public class GWTMechant
     //Le m�chant a besoin de connaitre son environnement, donc il a le plateau de jeu comme variable interne
     private GWTCase[] cases;
     private GWTPoint prec = new GWTPoint(0,0);
-    private int difficulte;
+    private int difficulte = 1;
     //Position de l'image du m�chant dans le canevas
     private GWTPoint image = new GWTPoint(0,0);
     

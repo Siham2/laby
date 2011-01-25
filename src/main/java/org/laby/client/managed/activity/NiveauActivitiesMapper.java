@@ -2,22 +2,22 @@
 
 package org.laby.client.managed.activity;
 
+import org.laby.client.managed.request.ApplicationRequestFactory;
+import org.laby.client.managed.request.NiveauProxy;
+import org.laby.client.managed.request.NiveauRequest;
+import org.laby.client.managed.ui.NiveauEditView;
+import org.laby.client.managed.ui.NiveauMobileEditView;
+import org.laby.client.scaffold.ScaffoldApp;
+import org.laby.client.scaffold.laby.activity.LabyActivity;
+import org.laby.client.scaffold.laby.ui.LabyView;
+import org.laby.client.scaffold.place.CreateAndEditProxy;
+import org.laby.client.scaffold.place.FindAndEditProxy;
+import org.laby.client.scaffold.place.ProxyPlace;
+
 import com.google.gwt.activity.shared.Activity;
 import com.google.gwt.place.shared.PlaceController;
 import com.google.gwt.requestfactory.shared.EntityProxyId;
 import com.google.gwt.requestfactory.shared.RequestContext;
-import org.laby.client.managed.request.ApplicationRequestFactory;
-import org.laby.client.managed.request.NiveauProxy;
-import org.laby.client.managed.request.NiveauRequest;
-import org.laby.client.managed.ui.NiveauDetailsView;
-import org.laby.client.managed.ui.NiveauEditView;
-import org.laby.client.managed.ui.NiveauListView;
-import org.laby.client.managed.ui.NiveauMobileDetailsView;
-import org.laby.client.managed.ui.NiveauMobileEditView;
-import org.laby.client.scaffold.ScaffoldApp;
-import org.laby.client.scaffold.place.CreateAndEditProxy;
-import org.laby.client.scaffold.place.FindAndEditProxy;
-import org.laby.client.scaffold.place.ProxyPlace;
 
 public class NiveauActivitiesMapper {
 
@@ -33,7 +33,7 @@ public class NiveauActivitiesMapper {
     public Activity getActivity(ProxyPlace place) {
         switch(place.getOperation()) {
             case DETAILS:
-                return new NiveauDetailsActivity((EntityProxyId<NiveauProxy>) place.getProxyId(), requests, placeController, ScaffoldApp.isMobile() ? NiveauMobileDetailsView.instance() : NiveauDetailsView.instance());
+                return new LabyActivity((EntityProxyId<NiveauProxy>) place.getProxyId(), requests, placeController,/* ScaffoldApp.isMobile() ? NiveauMobileDetailsView.instance() : */ LabyView.instance());
             case EDIT:
                 return makeEditActivity(place);
             case CREATE:

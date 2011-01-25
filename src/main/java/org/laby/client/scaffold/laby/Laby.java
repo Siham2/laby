@@ -1,7 +1,7 @@
 package org.laby.client.scaffold.laby;
 
-import org.laby.client.managed.request.ApplicationRequestFactory;
 import org.laby.client.managed.request.NiveauProxy;
+import org.laby.client.scaffold.laby.ui.LabyView;
 
 import com.google.gwt.dom.client.ImageElement;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -21,8 +21,6 @@ import com.google.gwt.widgetideas.graphics.client.ImageLoader;
 public class Laby extends SimpleCanvasGame implements KeyPressHandler,
 		ClickHandler {
 
-	ApplicationRequestFactory requestFactory;
-
 	public String imagePath = "/images/sprites/";// par défaut
 
 	/** Taille des cases */
@@ -38,6 +36,7 @@ public class Laby extends SimpleCanvasGame implements KeyPressHandler,
 	
 
 	private Boolean isStarted = false;
+	
 
 	Timer timer;
 
@@ -56,22 +55,39 @@ public class Laby extends SimpleCanvasGame implements KeyPressHandler,
 	/** palette qui contient les images des sorties */
 	private ImageElement paletteSortie;
 
-	private int score = 0;
+	private int score = 100000;
 	/** difficulté */
-	private int ddifficulte = 1;
+	private int difficulte = 1;
+	
+	//Todo crappy move all to activity
+	private LabyView view;
+	
+	
 	/** Le joueur a-t-il gagné? */
 	private boolean gagne = true;
 
-	public Laby(ApplicationRequestFactory requestFactory, GWTCanvas theCanvas,
+	public Laby(LabyView view, GWTCanvas theCanvas,
 			NiveauProxy niveau) {
 		super(theCanvas);
 		this.gameName = "Laby";
-		this.requestFactory = requestFactory;
 		this.niveau = niveau;
-	
+		this.view = view;
+		//resetAudioTag();
 	}
 
 	
+	
+	
+	/**
+	 * @param difficulte the difficulte to set
+	 */
+	public void setDifficulte(int difficulte) {
+		this.difficulte = difficulte;
+	}
+
+
+
+
 	/***********************************************************
 	 * Routine qui gère l'affichage (double buffering)
 	 ***********************************************************/
@@ -136,13 +152,14 @@ public class Laby extends SimpleCanvasGame implements KeyPressHandler,
 		// Dessin et gestion des m�chants
 		for (int i = 0; i < niveauLoader.vilain.length; i++) { // mise � jour de la
 			// difficult�
-			niveauLoader.vilain[i].setDifficulte(ddifficulte);
+			niveauLoader.vilain[i].setDifficulte(difficulte);
 
 			// Cas ou lengthjoueur a rencontr� un m�chant (il meurt)
 
 			if (!niveauLoader.joueur.enVie(niveauLoader.vilain[i].getCoord())) {
 				// canvas.drawImage(imageMort,(joueur.getCoord().x-1)*TAILLE_CASE+4,(joueur.getCoord().y+1)*TAILLE_CASE+MARGIN,3*TAILLE_CASE,1*TAILLE_CASE);
 				canvas.setBackgroundColor(Color.RED);
+				stopAudioTag();
 				shouldStop = true;
 
 			} else {
@@ -178,6 +195,7 @@ public class Laby extends SimpleCanvasGame implements KeyPressHandler,
 				// canvas.drawImage(imageVictoire,(joueur.getCoord().x-1)*TAILLE_CASE+4,(joueur.getCoord().y+1)*TAILLE_CASE+MARGIN,3*TAILLE_CASE,1*TAILLE_CASE,this);
 				// arret de tous les m�chants
 				shouldStop = true;
+				view.displayScorePopup(score);
 			}
 		}
 
@@ -191,11 +209,31 @@ public class Laby extends SimpleCanvasGame implements KeyPressHandler,
 				.drawImage(niveauLoader.joueur.getImage(), destX, destY, destWidth,
 						destHeight);
 
+//		if(!isStarted){
+////			// Filled triangle
+//		canvas.beginPath();
+//		canvas.moveTo(25,25);
+//		canvas.lineTo(105,25);
+//		canvas.lineTo(25,105);
+//		canvas.fill();
+//		// Stroked triangle
+//		canvas.beginPath();
+//		canvas.moveTo(125,125);
+//		canvas.lineTo(125,45);
+//		canvas.lineTo(45,125);
+//		canvas.closePath();
+//		canvas.stroke();
+//			
+//	}
+		
+		
 		canvas.restoreContext();
 
 		if (shouldStop) {
 			stopGame();
-		} else {
+		} 	
+		else if(isStarted) {
+			score -= 100/difficulte;
 			timer.schedule(REFRESH_RATE);
 		}
 
@@ -265,13 +303,16 @@ public class Laby extends SimpleCanvasGame implements KeyPressHandler,
 		} else {
 			// Go ahead and animate
 			if (isImageLoaded(paletteSortie)) {
-				timer.schedule(1000);
+				timer.schedule(REFRESH_RATE);
 			} else {
 				Window.alert("Refresh the page to reload the image.");
 			}
 		}
 
 	}
+	
+	
+	
 
 	@Override
 	public void stopGame() {
@@ -279,28 +320,48 @@ public class Laby extends SimpleCanvasGame implements KeyPressHandler,
 			niveauLoader.vilain[j].stop();
 		}
 		timer.cancel();
+		stopAudioTag();
 		isStarted = false;
 	}
 
+	
 	private native boolean isImageLoaded(ImageElement imgElem) /*-{
 		return !!imgElem.__isLoaded;
 	}-*/;
 
+	public native void playAudioTag() /*-{
+		$doc.getElementById('audioTag').play();
+	}-*/;
+	
+	public native void stopAudioTag() /*-{
+		$doc.getElementById('audioTag').pause();
+	}-*/;
+	
+	
+	public native void resetAudioTag() /*-{
+		if($doc.getElementById('audioTag')!=null){
+			$doc.getElementById('audioTag').currentTime = 0;
+		}
+	}-*/;
+	
+	
 	@Override
 	public void onKeyPress(KeyPressEvent event) {
-		switch (event.getNativeEvent().getKeyCode()) {
-		case KeyCodes.KEY_UP:
-			niveauLoader.joueur.deplace(0, -1);
-			break;
-		case KeyCodes.KEY_DOWN:
-			niveauLoader.joueur.deplace(0, 1);
-			break;
-		case KeyCodes.KEY_RIGHT:
-			niveauLoader.joueur.deplace(1, 0);
-			break;
-		case KeyCodes.KEY_LEFT:
-			niveauLoader.joueur.deplace(-1, 0);
-			break;
+		if(isStarted){
+			switch (event.getNativeEvent().getKeyCode()) {
+			case KeyCodes.KEY_UP:
+				niveauLoader.joueur.deplace(0, -1);
+				break;
+			case KeyCodes.KEY_DOWN:
+				niveauLoader.joueur.deplace(0, 1);
+				break;
+			case KeyCodes.KEY_RIGHT:
+				niveauLoader.joueur.deplace(1, 0);
+				break;
+			case KeyCodes.KEY_LEFT:
+				niveauLoader.joueur.deplace(-1, 0);
+				break;
+			}
 		}
 
 	}
@@ -309,13 +370,25 @@ public class Laby extends SimpleCanvasGame implements KeyPressHandler,
 	public void onClick(ClickEvent event) {
 		if (isStarted) {
 			stopGame();
+		   
 		} else {
+			playAudioTag();
 			for (int j = 0; j < niveauLoader.vilain.length; j++) {
 				niveauLoader.vilain[j].start();
 			}
 			isStarted = true;
-			timer.schedule(1000);
+			timer.schedule(REFRESH_RATE);
 		}
+	}
+
+
+
+
+	public Integer getScore() {
+		if(gagne){
+			return score;
+		}
+		return null;
 	}
 
 }

@@ -23,12 +23,13 @@ public abstract class ApplicationEntityTypesProcessor<T> {
 
     public static Set<java.lang.Class<? extends com.google.gwt.requestfactory.shared.EntityProxy>> getAll() {
         Set<Class<? extends EntityProxy>> rtn = new HashSet<Class<? extends EntityProxy>>();
-        rtn.add(ScoreProxy.class);
         rtn.add(NiveauProxy.class);
-        rtn.add(MechantProxy.class);
-        rtn.add(JoueurProxy.class);
-        rtn.add(CaseElementProxy.class);
-        rtn.add(BonusProxy.class);
+        rtn.add(ScoreProxy.class);
+       
+        //rtn.add(MechantProxy.class);
+        //rtn.add(JoueurProxy.class);
+        //rtn.add(CaseElementProxy.class);
+        //rtn.add(BonusProxy.class);
         return Collections.unmodifiableSet(rtn);
     }
 

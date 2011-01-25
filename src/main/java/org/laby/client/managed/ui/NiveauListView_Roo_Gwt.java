@@ -32,46 +32,46 @@ public abstract class NiveauListView_Roo_Gwt extends AbstractProxyListView<Nivea
     protected Set<String> paths = new HashSet<String>();
 
     public void init() {
-        paths.add("bonus");
-        table.addColumn(new TextColumn<NiveauProxy>() {
-
-            Renderer<java.util.List> renderer = org.laby.client.scaffold.place.CollectionRenderer.of(org.laby.client.managed.ui.BonusProxyRenderer.instance());
-
-            @Override
-            public String getValue(NiveauProxy object) {
-                return renderer.render(object.getBonus());
-            }
-        }, "Bonus");
-        paths.add("vilains");
-        table.addColumn(new TextColumn<NiveauProxy>() {
-
-            Renderer<java.util.List> renderer = org.laby.client.scaffold.place.CollectionRenderer.of(org.laby.client.managed.ui.MechantProxyRenderer.instance());
-
-            @Override
-            public String getValue(NiveauProxy object) {
-                return renderer.render(object.getVilains());
-            }
-        }, "Vilains");
-        paths.add("cases");
-        table.addColumn(new TextColumn<NiveauProxy>() {
-
-            Renderer<java.util.List> renderer = org.laby.client.scaffold.place.CollectionRenderer.of(org.laby.client.managed.ui.CaseElementProxyRenderer.instance());
-
-            @Override
-            public String getValue(NiveauProxy object) {
-                return renderer.render(object.getCases());
-            }
-        }, "Cases");
-        paths.add("joueur");
-        table.addColumn(new TextColumn<NiveauProxy>() {
-
-            Renderer<org.laby.client.managed.request.JoueurProxy> renderer = org.laby.client.managed.ui.JoueurProxyRenderer.instance();
-
-            @Override
-            public String getValue(NiveauProxy object) {
-                return renderer.render(object.getJoueur());
-            }
-        }, "Joueur");
+//        paths.add("bonus");
+//        table.addColumn(new TextColumn<NiveauProxy>() {
+//
+//            Renderer<java.util.List> renderer = org.laby.client.scaffold.place.CollectionRenderer.of(org.laby.client.managed.ui.BonusProxyRenderer.instance());
+//
+//            @Override
+//            public String getValue(NiveauProxy object) {
+//                return renderer.render(object.getBonus());
+//            }
+//        }, "Bonus");
+//        paths.add("vilains");
+//        table.addColumn(new TextColumn<NiveauProxy>() {
+//
+//            Renderer<java.util.List> renderer = org.laby.client.scaffold.place.CollectionRenderer.of(org.laby.client.managed.ui.MechantProxyRenderer.instance());
+//
+//            @Override
+//            public String getValue(NiveauProxy object) {
+//                return renderer.render(object.getVilains());
+//            }
+//        }, "Vilains");
+//        paths.add("cases");
+//        table.addColumn(new TextColumn<NiveauProxy>() {
+//
+//            Renderer<java.util.List> renderer = org.laby.client.scaffold.place.CollectionRenderer.of(org.laby.client.managed.ui.CaseElementProxyRenderer.instance());
+//
+//            @Override
+//            public String getValue(NiveauProxy object) {
+//                return renderer.render(object.getCases());
+//            }
+//        }, "Cases");
+//        paths.add("joueur");
+//        table.addColumn(new TextColumn<NiveauProxy>() {
+//
+//            Renderer<org.laby.client.managed.request.JoueurProxy> renderer = org.laby.client.managed.ui.JoueurProxyRenderer.instance();
+//
+//            @Override
+//            public String getValue(NiveauProxy object) {
+//                return renderer.render(object.getJoueur());
+//            }
+//        }, "Joueur");
         paths.add("id");
         table.addColumn(new TextColumn<NiveauProxy>() {
 
@@ -87,21 +87,21 @@ public abstract class NiveauListView_Roo_Gwt extends AbstractProxyListView<Nivea
                 return renderer.render(object.getId());
             }
         }, "Id");
-        paths.add("version");
-        table.addColumn(new TextColumn<NiveauProxy>() {
-
-            Renderer<java.lang.Integer> renderer = new AbstractRenderer<java.lang.Integer>() {
-
-                public String render(java.lang.Integer obj) {
-                    return obj == null ? "" : String.valueOf(obj);
-                }
-            };
-
-            @Override
-            public String getValue(NiveauProxy object) {
-                return renderer.render(object.getVersion());
-            }
-        }, "Version");
+//        paths.add("version");
+//        table.addColumn(new TextColumn<NiveauProxy>() {
+//
+//            Renderer<java.lang.Integer> renderer = new AbstractRenderer<java.lang.Integer>() {
+//
+//                public String render(java.lang.Integer obj) {
+//                    return obj == null ? "" : String.valueOf(obj);
+//                }
+//            };
+//
+//            @Override
+//            public String getValue(NiveauProxy object) {
+//                return renderer.render(object.getVersion());
+//            }
+//        }, "Version");
         paths.add("nom");
         table.addColumn(new TextColumn<NiveauProxy>() {
 
@@ -117,110 +117,110 @@ public abstract class NiveauListView_Roo_Gwt extends AbstractProxyListView<Nivea
                 return renderer.render(object.getNom());
             }
         }, "Nom");
-        paths.add("canvaCouloir");
-        table.addColumn(new TextColumn<NiveauProxy>() {
-
-            Renderer<java.lang.String> renderer = new AbstractRenderer<java.lang.String>() {
-
-                public String render(java.lang.String obj) {
-                    return obj == null ? "" : String.valueOf(obj);
-                }
-            };
-
-            @Override
-            public String getValue(NiveauProxy object) {
-                return renderer.render(object.getCanvaCouloir());
-            }
-        }, "Canva Couloir");
-        paths.add("canvaMur");
-        table.addColumn(new TextColumn<NiveauProxy>() {
-
-            Renderer<java.lang.String> renderer = new AbstractRenderer<java.lang.String>() {
-
-                public String render(java.lang.String obj) {
-                    return obj == null ? "" : String.valueOf(obj);
-                }
-            };
-
-            @Override
-            public String getValue(NiveauProxy object) {
-                return renderer.render(object.getCanvaMur());
-            }
-        }, "Canva Mur");
-        paths.add("canvaBonus");
-        table.addColumn(new TextColumn<NiveauProxy>() {
-
-            Renderer<java.lang.String> renderer = new AbstractRenderer<java.lang.String>() {
-
-                public String render(java.lang.String obj) {
-                    return obj == null ? "" : String.valueOf(obj);
-                }
-            };
-
-            @Override
-            public String getValue(NiveauProxy object) {
-                return renderer.render(object.getCanvaBonus());
-            }
-        }, "Canva Bonus");
-        paths.add("canvaSortie");
-        table.addColumn(new TextColumn<NiveauProxy>() {
-
-            Renderer<java.lang.String> renderer = new AbstractRenderer<java.lang.String>() {
-
-                public String render(java.lang.String obj) {
-                    return obj == null ? "" : String.valueOf(obj);
-                }
-            };
-
-            @Override
-            public String getValue(NiveauProxy object) {
-                return renderer.render(object.getCanvaSortie());
-            }
-        }, "Canva Sortie");
-        paths.add("canvaMechants");
-        table.addColumn(new TextColumn<NiveauProxy>() {
-
-            Renderer<java.lang.String> renderer = new AbstractRenderer<java.lang.String>() {
-
-                public String render(java.lang.String obj) {
-                    return obj == null ? "" : String.valueOf(obj);
-                }
-            };
-
-            @Override
-            public String getValue(NiveauProxy object) {
-                return renderer.render(object.getCanvaMechants());
-            }
-        }, "Canva Mechants");
-        paths.add("tailleX");
-        table.addColumn(new TextColumn<NiveauProxy>() {
-
-            Renderer<java.lang.Integer> renderer = new AbstractRenderer<java.lang.Integer>() {
-
-                public String render(java.lang.Integer obj) {
-                    return obj == null ? "" : String.valueOf(obj);
-                }
-            };
-
-            @Override
-            public String getValue(NiveauProxy object) {
-                return renderer.render(object.getTailleX());
-            }
-        }, "Taille X");
-        paths.add("tailleY");
-        table.addColumn(new TextColumn<NiveauProxy>() {
-
-            Renderer<java.lang.Integer> renderer = new AbstractRenderer<java.lang.Integer>() {
-
-                public String render(java.lang.Integer obj) {
-                    return obj == null ? "" : String.valueOf(obj);
-                }
-            };
-
-            @Override
-            public String getValue(NiveauProxy object) {
-                return renderer.render(object.getTailleY());
-            }
-        }, "Taille Y");
+//        paths.add("canvaCouloir");
+//        table.addColumn(new TextColumn<NiveauProxy>() {
+//
+//            Renderer<java.lang.String> renderer = new AbstractRenderer<java.lang.String>() {
+//
+//                public String render(java.lang.String obj) {
+//                    return obj == null ? "" : String.valueOf(obj);
+//                }
+//            };
+//
+//            @Override
+//            public String getValue(NiveauProxy object) {
+//                return renderer.render(object.getCanvaCouloir());
+//            }
+//        }, "Canva Couloir");
+//        paths.add("canvaMur");
+//        table.addColumn(new TextColumn<NiveauProxy>() {
+//
+//            Renderer<java.lang.String> renderer = new AbstractRenderer<java.lang.String>() {
+//
+//                public String render(java.lang.String obj) {
+//                    return obj == null ? "" : String.valueOf(obj);
+//                }
+//            };
+//
+//            @Override
+//            public String getValue(NiveauProxy object) {
+//                return renderer.render(object.getCanvaMur());
+//            }
+//        }, "Canva Mur");
+//        paths.add("canvaBonus");
+//        table.addColumn(new TextColumn<NiveauProxy>() {
+//
+//            Renderer<java.lang.String> renderer = new AbstractRenderer<java.lang.String>() {
+//
+//                public String render(java.lang.String obj) {
+//                    return obj == null ? "" : String.valueOf(obj);
+//                }
+//            };
+//
+//            @Override
+//            public String getValue(NiveauProxy object) {
+//                return renderer.render(object.getCanvaBonus());
+//            }
+//        }, "Canva Bonus");
+//        paths.add("canvaSortie");
+//        table.addColumn(new TextColumn<NiveauProxy>() {
+//
+//            Renderer<java.lang.String> renderer = new AbstractRenderer<java.lang.String>() {
+//
+//                public String render(java.lang.String obj) {
+//                    return obj == null ? "" : String.valueOf(obj);
+//                }
+//            };
+//
+//            @Override
+//            public String getValue(NiveauProxy object) {
+//                return renderer.render(object.getCanvaSortie());
+//            }
+//        }, "Canva Sortie");
+//        paths.add("canvaMechants");
+//        table.addColumn(new TextColumn<NiveauProxy>() {
+//
+//            Renderer<java.lang.String> renderer = new AbstractRenderer<java.lang.String>() {
+//
+//                public String render(java.lang.String obj) {
+//                    return obj == null ? "" : String.valueOf(obj);
+//                }
+//            };
+//
+//            @Override
+//            public String getValue(NiveauProxy object) {
+//                return renderer.render(object.getCanvaMechants());
+//            }
+//        }, "Canva Mechants");
+//        paths.add("tailleX");
+//        table.addColumn(new TextColumn<NiveauProxy>() {
+//
+//            Renderer<java.lang.Integer> renderer = new AbstractRenderer<java.lang.Integer>() {
+//
+//                public String render(java.lang.Integer obj) {
+//                    return obj == null ? "" : String.valueOf(obj);
+//                }
+//            };
+//
+//            @Override
+//            public String getValue(NiveauProxy object) {
+//                return renderer.render(object.getTailleX());
+//            }
+//        }, "Taille X");
+//        paths.add("tailleY");
+//        table.addColumn(new TextColumn<NiveauProxy>() {
+//
+//            Renderer<java.lang.Integer> renderer = new AbstractRenderer<java.lang.Integer>() {
+//
+//                public String render(java.lang.Integer obj) {
+//                    return obj == null ? "" : String.valueOf(obj);
+//                }
+//            };
+//
+//            @Override
+//            public String getValue(NiveauProxy object) {
+//                return renderer.render(object.getTailleY());
+//            }
+//        }, "Taille Y");
     }
 }
